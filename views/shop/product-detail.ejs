@@ -11,5 +11,8 @@
     </div>
     <h2><%= product.price %></h2>
     <p><%= product.description %></p>
+    <form action="/cart" method="post">
+        <button class="btn" type="submit">Add To Cart</button>
+    </form>
 </main>
 <%- include('../includes/end.ejs') %>
