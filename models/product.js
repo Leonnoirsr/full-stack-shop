@@ -50,6 +50,20 @@ module.exports = class Product {
 			});
 		});
 	}
+	delete() {
+		getProductsFromFile(products => {
+			const productIndex = products.findIndex(prod => prod.id === this.id);
+			if (productIndex !== -1) {
+				products.splice(productIndex, 1);
+				fs.writeFile(p, JSON.stringify(products), err => {
+					console.log(err);
+				});
+			} else {
+				console.log("Product with the specified ID does not exist.");
+			}
+		});
+	}
+
 	
 	static fetchAll( cb ){
 		getProductsFromFile( cb );
