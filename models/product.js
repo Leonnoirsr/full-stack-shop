@@ -1,6 +1,8 @@
 const fs   = require( 'fs' );
 const path = require( 'path' );
 
+const Cart = require( './cart' )
+
 const p = path.join(
 	path.dirname( process.mainModule.filename ),
 	'data',
@@ -28,42 +30,46 @@ module.exports = class Product {
 		this.price       = price;
 	}
 	
-	
-	save() {
-		getProductsFromFile(products => {
-			if (this.id) {
-				const existingProductIndex = products.findIndex(prod => prod.id === this.id);
+	save(){
+		getProductsFromFile( products => {
+			if( this.id ){
+				const existingProductIndex = products.findIndex( prod => prod.id === this.id );
 				
-				if (existingProductIndex !== -1) {
-					products[existingProductIndex] = this;
+				if( existingProductIndex !== -1 ){
+					products[ existingProductIndex ] = this;
 				} else {
-					console.log("Product with the specified ID does not exist.");
+					console.log( "Product with the specified ID does not exist." );
 					return;
 				}
 			} else {
 				this.id = Math.random().toString();
-				products.push(this);
+				products.push( this );
 			}
 			
-			fs.writeFile(p, JSON.stringify(products), err => {
-				console.log(err);
-			});
-		});
+			fs.writeFile( p, JSON.stringify( products ), err => {
+				console.log( err );
+			} );
+		} );
 	}
-	delete() {
-		getProductsFromFile(products => {
-			const productIndex = products.findIndex(prod => prod.id === this.id);
-			if (productIndex !== -1) {
-				products.splice(productIndex, 1);
-				fs.writeFile(p, JSON.stringify(products), err => {
-					console.log(err);
-				});
+	
+	delete(){
+		getProductsFromFile( products => {
+			const productIndex = products.findIndex( prod => prod.id === this.id );
+			if( productIndex !== -1 ){
+				products.splice( productIndex, 1 );
+				fs.writeFile( p, JSON.stringify( products ), err => {
+					
+					if( !err ){
+						Cart.deleteProduct( this.id, productIndex.price )
+					} else {
+						console.log( err );
+					}
+				} );
 			} else {
-				console.log("Product with the specified ID does not exist.");
+				console.log( "Product with the specified ID does not exist." );
 			}
-		});
+		} );
 	}
-
 	
 	static fetchAll( cb ){
 		getProductsFromFile( cb );

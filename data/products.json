@@ -1,1 +1,30 @@
-[{"id":12345,"title":"A Book","imageUrl":"https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg","description":"This is an awesome book!","price":"19"},{"title":"Another product","imageUrl":"","description":"Random product to add to the data","price":"25","id":"0.9800377942631964"}]
+[
+  {
+    "id": "0.9800377942631964",
+    "title": "Air Jordan 1's",
+    "imageUrl": "https://sothebys-com.brightspotcdn.com/dims4/default/6e6aba8/2147483647/strip/true/crop/4000x2667+0+0/resize/684x456!/format/webp/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F1d%2F76%2F3978542641f4885f1b5c08c3c1d2%2Fsothebys2022-1130-165142-4737-alivecoverage.jpg",
+    "description": "A pair of vintage Air Jordan 1's",
+    "price": "600"
+  },
+  {
+    "id": "0.7227974505202717",
+    "title": "Rolex Datejust",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0566/2598/7738/products/1601-TT-GRN-DIA-AM-FLT-JBL-4_0c0be637-cc55-459d-b335-4f9b7c430083_grande.jpg?v=1657774547",
+    "description": "Rollie",
+    "price": "6000"
+  },
+  {
+    "id": "0.6282011142378678",
+    "title": "BMW 330xi M Sport",
+    "imageUrl": "https://live.staticflickr.com/4596/38298206345_135c4cb104_b.jpg",
+    "description": "Bimmer M Sport edition",
+    "price": "26000"
+  },
+  {
+    "id": "0.5334562873354844",
+    "title": "Audi SQ5",
+    "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/2023-audi-sq5-ultra-blue-metallic-111-64b0459272050.jpg",
+    "description": "Vroom Vroom",
+    "price": "60000"
+  }
+]
