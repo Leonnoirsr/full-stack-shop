@@ -76,9 +76,10 @@ module.exports = class Cart {
 				console.log( "Product not found." );
 			}
 			
-		} )
-	}
-	
+			3
+0		} )
+	}10
+1
 	static getCart( cb ){
 		fs.readFile( p, ( err, fileContent ) => {
 			const cart = JSON.parse( fileContent );
