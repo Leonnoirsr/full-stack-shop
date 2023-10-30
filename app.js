@@ -32,6 +32,7 @@ const store = new MongoDBStore({
 });
 
 
+
 app.set( 'view engine', 'ejs' );
 app.set( 'views', 'views' );
 
@@ -43,8 +44,18 @@ app.use( bodyParser.urlencoded( { extended: false } ) );
 app.use( express.static( path.join( __dirname, 'public' ) ) );
 app.use(
 	session( { secret: 'cyxnyeaijq', resave: false, saveUninitialized: false, store: store  } ) )
-
-
+app.use((req, res, next) => {
+	if(req.session && req.session.user) {
+		User.findById(req.session.user._id)
+		    .then( user => {
+			    req.user = user
+			    next()
+		    } )
+		    .catch()
+	} else {
+		next();
+	}
+})
 app.use( '/admin', adminRoutes );
 app.use( shopRoutes );
 app.use( authRoutes );
