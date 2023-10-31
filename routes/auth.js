@@ -1,11 +1,17 @@
-const express = require( 'express' );
-const authControllers = require('../controllers/auth');
-const router  = express.Router();
+const express = require('express');
 
-router.get( '/login', authControllers.getLogin);
+const authController = require('../controllers/auth');
 
-router.post('/login', authControllers.postLogin);
+const router = express.Router();
 
-router.post('/logout', authControllers.postLogout)
+router.get('/login', authController.getLogin);
+
+router.get('/signup', authController.getSignup);
+
+router.post('/login', authController.postLogin);
+
+router.post('/signup', authController.postSignup);
+
+router.post('/logout', authController.postLogout);
 
 module.exports = router;
