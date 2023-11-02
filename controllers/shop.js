@@ -8,6 +8,7 @@ exports.getProducts = ( req, res, next ) => {
 			       prods:     products,
 			       pageTitle: 'All Products',
 			       path:      '/products',
+			       user:      req.user,
 			      
 		       } );
 	       } )
@@ -25,6 +26,7 @@ exports.getProduct = ( req, res, next ) => {
 				       product:   product,
 				       pageTitle: product.title,
 				       path:      '/products',
+				       user:      req.user,
 				      
 			       } )
 	       } )
@@ -43,6 +45,7 @@ exports.getIndex = ( req, res, next ) => {
 			       prods:     products,
 			       pageTitle: 'Shop',
 			       path:      '/',
+			       user:      req.user,
 		       } );
 	       } ).catch( err => console.log( err ) )
 	
@@ -57,6 +60,7 @@ exports.getCart = ( req, res, next ) => {
 			   path:      '/cart',
 			   pageTitle: 'Your Cart',
 			   products:  products,
+			   user:      req.user,
 			  
 		   } );
 	   } )
@@ -118,6 +122,7 @@ exports.getOrders = ( req, res, next ) => {
 	     .then( orders => {
 		   res.render( 'shop/orders', {
 			   path:      '/orders',
+			   user:      req.user,
 			   pageTitle: 'Your Orders',
 			   orders:    orders
 		   } );
@@ -129,6 +134,7 @@ exports.getOrders = ( req, res, next ) => {
 exports.getCheckout = ( req, res, next ) => {
 	res.render( 'shop/checkout', {
 		path:      '/checkout',
+		user:      req.user,
 		pageTitle: 'Checkout'
 	} );
 };

@@ -25,6 +25,10 @@ const userSchema = new Schema( {
 				}
 			}
 		]
+	},
+	role: {
+		type: Number,
+		default: 0
 	}
 } )
 
