@@ -12,12 +12,14 @@
 
 .form-control input,
 .form-control textarea {
-  border: 1px solid #a1a1a1;
+  border: 1px solid #3498db;
   font: inherit;
   border-radius: 2px;
+  padding: 0.5rem;
 }
 
 .form-control input:focus,
 .form-control textarea:focus {
-  outline-color: #00695c;
+  outline: none;
+  border-color: #2980b9;
 }

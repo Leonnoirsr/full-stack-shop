@@ -1,6 +1,17 @@
 .login-form{
-	width:     20rem;
-	max-width: 90%;
-	margin:    auto;
-	display:   block;
+	width: 90%;
+	max-width: 400px;
+	margin: 2rem auto;
+	padding: 1rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	text-align: center;
+}
+
+.login-form input,
+.login-form button {
+	width: 100%;
+	max-width: 300px;
+	display: block;
+	margin: 0 auto;
 }

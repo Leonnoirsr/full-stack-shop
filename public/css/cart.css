@@ -3,8 +3,8 @@
   margin: 0;
   padding: 0;
   margin: auto;
-  width: 40rem;
-  max-width: 90%;
+  width: 90%;
+  max-width: 600px;
 }
 
 .cart__item {
@@ -12,7 +12,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .cart__item h1,
@@ -21,4 +22,3 @@
   font-size: 1.2rem;
   margin: 0;
 }
-
